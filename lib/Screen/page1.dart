@@ -45,14 +45,14 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 60,
-                  left: 280,
-                  right: 0,
+                  top: 55,
+                  right: 20,
                   child: IconButton(
                       onPressed: () {},
                       icon: const Icon(
-                        Icons.alarm,
+                        Icons.circle_notifications,
                         color: Colors.white,
+                        size: 40,
                       )))
             ],
           ),
@@ -95,33 +95,29 @@ class MainPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 6),
-                      child: Container(
-                        height: 40,
-                        width: 123,
-                        decoration: BoxDecoration(
+                    return Container(
+                      height: 40,
+                      width: 135,
+                      decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: const Color(0xffEF8C00),
-                        ),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Image.asset(
-                                'photo/smallburger.jpg',
-                                height: 50,
-                              ),
-                              Text(
-                                "Burger",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ],
-                          ),
+                          color: const Color(0xfffe8c00)),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Image.asset(
+                              'photo/smallburger.jpg',
+                              height: 50,
+                            ),
+                            Text(
+                              "Burger",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
                         ),
                       ),
                     );
@@ -210,11 +206,14 @@ class MainPage extends StatelessWidget {
                                       color: const Color(0xffFE8C00),
                                     )),
                               ])),
-                              const CircleAvatar(
-                                backgroundColor: Color(0xfffe8c00),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.white,
+                              InkWell(
+                                onTap: () {},
+                                child: const CircleAvatar(
+                                  backgroundColor: Color(0xfffe8c00),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ],
