@@ -1,3 +1,4 @@
+import 'package:cake_shop/Screen/showburger.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -96,6 +97,7 @@ class MainPage extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       height: 40,
                       width: 135,
                       decoration: BoxDecoration(
@@ -139,87 +141,95 @@ class MainPage extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2),
                 child: Card(
-                  child: Container(
-                    height: 257,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xffFFFFFF),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "⭐ 4.8",
-                          style: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Center(
-                          child: Image.asset(
-                            'photo/chickenburger.jpg',
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                            "Veg Burger",
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ShowBurger()));
+                    },
+                    child: Container(
+                      height: 257,
+                      width: 170,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color(0xffFFFFFF),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "⭐ 4.8",
                             style: GoogleFonts.dmSans(
-                              fontSize: 22,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "200 gr chicken + cheese  Lettuce + tomato",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                          Center(
+                            child: Image.asset(
+                              'photo/chickenburger.jpg',
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 12,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text.rich(TextSpan(children: [
-                                TextSpan(
-                                    text: "\$22",
-                                    style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                      color: const Color(0xffFE8C00),
-                                    )),
-                                TextSpan(
-                                    text: ".00",
-                                    style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 14,
-                                      color: const Color(0xffFE8C00),
-                                    )),
-                              ])),
-                              InkWell(
-                                onTap: () {},
-                                child: const CircleAvatar(
-                                  backgroundColor: Color(0xfffe8c00),
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.white,
+                          Center(
+                            child: Text(
+                              "Veg Burger",
+                              style: GoogleFonts.dmSans(
+                                fontSize: 22,
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "200 gr chicken + cheese  Lettuce + tomato",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text.rich(TextSpan(children: [
+                                  TextSpan(
+                                      text: "\$22",
+                                      style: GoogleFonts.dmSans(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        color: const Color(0xffFE8C00),
+                                      )),
+                                  TextSpan(
+                                      text: ".00",
+                                      style: GoogleFonts.dmSans(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 14,
+                                        color: const Color(0xffFE8C00),
+                                      )),
+                                ])),
+                                InkWell(
+                                  onTap: () {},
+                                  child: const CircleAvatar(
+                                    backgroundColor: Color(0xfffe8c00),
+                                    child: Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
